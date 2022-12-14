@@ -1,0 +1,580 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+    <title>FIT INSPIRE</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+
+
+
+        margin: auto 0;
+        position: relative;
+    }
+
+    .heading {
+
+        background-color: #ff5757;
+        padding-bottom: 20px;
+        width: 100%;
+        margin-top: -10px;
+        height: 10px;
+
+    }
+
+    a img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .search {
+        width: 25px;
+        height: 25px;
+        margin-top: -20px;
+    }
+
+    .search:hover {
+        cursor: pointer;
+
+    }
+
+    .bell {
+
+        margin-top: -20px;
+        margin-right: 10px;
+    }
+
+    .bell:hover {
+        cursor: pointer;
+    }
+
+    .logo {
+        width: 300px;
+        height: 300px;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 150;
+        right: 0;
+    }
+
+    .logoo {
+        margin-top: 10px;
+        width: 250px;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    .right {
+        float: right;
+        margin-top: -18px;
+        padding-bottom: -10px;
+    }
+
+    .right:hover {
+        cursor: pointer;
+    }
+
+    .started {
+        margin-top: 337px;
+    }
+
+    .input-box {
+        width: 100%;
+        display: block;
+        position: relative;
+        margin-top: 375px;
+        text-align: center;
+        height: auto;
+    }
+
+    #menuToggle {
+        display: block;
+        position: relative;
+        margin-top: 10px;
+        top: 15px;
+        left: 15px;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    #menuToggle a:hover {
+        color: #ff5757;
+    }
+
+    #menuToggle a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s ease;
+    }
+
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        margin-top: 10px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+
+        -webkit-touch-callout: none;
+    }
+
+
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+
+        background: black;
+        border-radius: 3px;
+
+        z-index: 1;
+
+        transform-origin: 4px 0px;
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: white;
+    }
+
+
+    #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    #menu {
+        position: absolute;
+        width: 150px;
+        margin: -100px 0 0 -30px;
+        padding: 30px;
+        padding-top: 125px;
+        background: black;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.10, 0.1, 0.05, 0.8);
+    }
+
+    #menu li {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+    #menuToggle input:checked~ul {
+        transform: none;
+    }
+
+    .bellIcon {
+        margin-top: 2%;
+        margin-right: 2%;
+        width: 8%;
+        cursor: pointer;
+        float: right;
+    }
+
+    .searchIcon {
+        margin-top: 2%;
+        margin-right: .5em;
+        width: 8%;
+        cursor: pointer;
+        float: right;
+    }
+
+    .menuIcon {
+        margin-top: 2%;
+        margin-left: 2%;
+        width: 8%;
+        cursor: pointer;
+        float: left;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: rgb(255, 255, 255);
+        background-color: #ff5757;
+        text-align: center;
+        margin: auto;
+        padding-top: 1.3em;
+        padding-bottom: 35px;
+
+    }
+
+    form {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: Center;
+        padding-top: 200px;
+
+    }
+
+    form input {
+        width: 100px;
+        height: 38px;
+        border-radius: 20px;
+        border-color: blue;
+    }
+
+    .targetBody {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: left;
+        padding-top: .5em;
+        margin: 10px 10px;
+        margin-left: 20px;
+        padding: 5px;
+
+    }
+
+    .targetBody .button {
+        font-weight: bold;
+        color: #ff5757;
+        background-color: White;
+        border-color: blue;
+        padding: 15px 28px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50px;
+
+    }
+
+    .focus {
+        font-weight: bold;
+        font-size: 45px;
+        text-align: center;
+
+
+
+    }
+
+    .nextButton:hover {
+        background-color: #ff5757;
+    }
+
+    .nextButton  .nextButton{
+        border: none;
+        font-weight: bold;
+        color: black;
+        background-color: ;
+       
+        
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
+        margin-left:50px; 
+        cursor: pointer;
+    }
+
+    .trainingDays {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: left;
+        padding-top: .5em;
+        margin: 10px 5px;
+        padding: 5px;
+    }
+
+    .days {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .days .button {
+        font-weight: bold;
+        color: #ff5757;
+        background-color: White;
+        border-color: blue;
+        padding: 15px 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+
+    .days .buttonn {
+        font-weight: bold;
+        color: #ff5757;
+        background-color: White;
+        border-color: blue;
+        padding: 15px 55px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+
+    .diet {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: left;
+        padding-top: .5em;
+        margin: 10px 5px;
+        padding: 5px;
+    }
+
+    .properDiet {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .properDiet .button {
+        font-weight: bold;
+        color: #eb6060;
+        background-color: White;
+        border-color: blue;
+        padding: 15px 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+
+    .properDiet .button2 {
+        font-weight: bold;
+        color: #eb6060;
+        background-color: White;
+        border-color: blue;
+        padding: 15px 58px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+
+    input {
+        font-size: 20px;
+        padding: 5px;
+
+        text-align: center;
+    }
+
+    #search {
+        width: 90%;
+    }
+
+    .searchicon {
+        color: #5CB85C;
+    }
+
+    .items-collection {
+        margin: 20px 0 0 0;
+    }
+
+    .items-collection label.btn-default.active {
+        background-color: #ff5757;
+        color: White;
+    }
+
+    .items-collection label.btn-default {
+        width: 90%;
+        border: 1px solid #ff5757;
+        margin: 5px;
+        border-radius: 17px;
+        color: #305891;
+    }
+
+    .items-collection label .itemcontent {
+        width: 100%;
+    }
+
+    .items-collection .btn-group {
+        width: 90%
+    }
+
+    .row {
+        margin-left: 20px;
+        padding-bottom: 50px;
+    }
+</style>
+
+<body>
+    <div class="heading">
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <a href="#">
+                        <li>Home</li>
+                    </a>
+                    <a href="#">
+                        <li>About</li>
+                    </a>
+                    <a href="#">
+                        <li>Info</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="right">
+                <a href="#" class="search"><img src="search.png"></a>
+                <a href="#" class="bell"><img src="bell.png"></a>
+            </div>
+        </nav>
+
+        <body>
+            <div class="heading">
+                <img src="bellIcon.png" alt="Notification icon" class="bellIcon">
+                <img src="searchIcon.png" alt="search icon" class="searchIcon">
+                <img src="menuIcon.png" alt="Menu icon" class="menuIcon">
+
+                <h1>Welcome to FIT INSPIRE!</h1>
+            </div>
+            <form action="/action_page.php">
+                <label for="age">Age</label><br>
+                <input type="text" id="age" name="age"><label for="age"> y/o</label><br><br>
+                <label for="weight">Weight:</label><br>
+                <input type="text" id="weight" name="weight"><label for="weight"> lbs</label><br><br>
+                <label for="height">Height:</label><br>
+                <input type="text" id="height" name="height"><label for="height"> cm</label><br><br>
+            </form>
+            <div class="container">
+                <h2 class="focus">FOCUS</h2>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="items-collection">
+                            <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <div class="info-block block-info clearfix">
+                                    <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                                        <label class="btn btn-default">
+                                            <div class="itemcontent">
+                                                <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                                <span class="fa fa-car fa-2x"></span>
+                                                <h5>Arms</h5>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <div class="info-block block-info clearfix">
+                                    <div data-toggle="buttons" class="btn-group itemcontent">
+                                        <label class="btn btn-default">
+                                            <div class="itemcontent">
+                                                <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                                <span class="fa fa-truck fa-2x"></span>
+                                                <h5>Chest</h5>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <div class="info-block block-info clearfix">
+                                    <div data-toggle="buttons" class="btn-group itemcontent">
+                                        <label class="btn btn-default">
+                                            <div class="itemcontent">
+                                                <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                                <span class="fa fa-cube fa-2x"></span>
+                                                <h5>Belly</h5>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                <div class="info-block block-info clearfix">
+                                    <div data-toggle="buttons" class="btn-group itemcontent">
+                                        <label class="btn btn-default">
+                                            <div class="itemcontent">
+                                                <input type="checkbox" name="var_id[]" autocomplete="off" value="">
+                                                <span class="fa fa-cube fa-2x"></span>
+                                                <h5>Legs</h5>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			</div>
+            <div class="nextButton">
+                <button class="nextButton"><a href="page6.html">NEXT</button>
+            </div>
+            <script>
+                $(function () {
+                    $('#search').on('keyup', function () {
+                        var pattern = $(this).val();
+                        $('.items-collection .items').hide();
+                        $('.items-collection .items').filter(function () {
+                            return $(this).text().match(new RegExp(pattern, 'i'));
+                        }).show();
+                    });
+                });
+            </script>
+
+
+
+
+
+        </body>
+    
+</body>
+
+</html>
